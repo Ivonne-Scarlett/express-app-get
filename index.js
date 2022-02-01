@@ -85,7 +85,6 @@ app.get('/koders/id/:id', async (request, response) => {
     const idFound = db.koders.filter((koder) => {
         return koder.id.toString() === id.toString()
     })
-    console.log(idFound)
     response.json(idFound)
 })
 
