@@ -173,22 +173,28 @@ app.patch('/koders/:id', async (request, response) => {
     response.json(db.koders[koderFoundIndex])
 })
 
+
+
+
+
+
 //PARA MENTORS
 app.get('/mentors', async (request, response) => {
     const data = await fsPromise.readFile('kodemia.json','utf8')
     const db = JSON.parse(data)
-    let mentorsFound = db.mentors
-
-    if (request.query.max_age){
-        mentorsFound = mentorsFound.filter((mentor)=>{
-            return mentor.age <= parseInt(request.query.max_age)
-        })
-    }
+    let mentorsFound = db.mentors   
     response.json(mentorsFound)
 })
 
 app.get('/mentors/:id', async (request, response) => {
     const id = request.params.id
+    if(isNaN(id)){
+        response.status(400)
+        .json({
+            message: 'ID must be a number'
+        })
+        return        
+    } 
     const data = await fsPromise.readFile('kodemia.json','utf8')
     const db = JSON.parse(data)    
     const idFound = db.mentors.filter((mentor) => {
@@ -200,22 +206,17 @@ app.get('/mentors/:id', async (request, response) => {
 
 //Crear un MENTOR
 app.post('/mentors', async (request, response) => {
-
     const data = await fsPromise.readFile('kodemia.json', 'utf8')
     const db = JSON.parse(data)
-
     const newMentorId = db.mentors.length + 1
     const newMentorData = {
         id: newMentorId,
         ... request.body
     }
-
     db.mentors.push(newMentorData)
-
     const dbAsString = JSON.stringify(db, '\n', 2)
     await fsPromise.writeFile('kodemia.json', dbAsString, 'utf8')
-
-    response.json(db.koders)
+    response.json(db.mentors)
 })
 
 
@@ -224,21 +225,17 @@ app.delete('/mentors/:id', async (request, response) => {
     const id = parseInt(request.params.id)
     const data = await fsPromise.readFile('kodemia.json','utf8')
     const db = JSON.parse(data)
-
     const newMentorsArray = db.mentors.filter((mentor) => id !== mentor.id)
     db.mentors = newMentorsArray
-
     const dbAsString = JSON.stringify(db, '\n', 2)
     await fsPromise.writeFile('kodemia.json',dbAsString, 'utf8')
-
     response.json(db.mentors)
 })
 
 
-//Endpoint para actualizar info de un koder existente
+//Actualizar mentor
 app.patch('/mentors/:id', async (request, response) => {
     const id = parseInt(request.params.id)
-
     if(isNaN(id)){
         response.status(400)
         .json({
@@ -246,12 +243,9 @@ app.patch('/mentors/:id', async (request, response) => {
         })
         return        
     }
-
     const data = await fsPromise.readFile('kodemia.json','utf8')
     const db = JSON.parse(data)
-
     const mentorFoundIndex = db.mentors.findIndex((mentor) => id === mentor.id)
-
     if (mentorFoundIndex < 0){
         response.status(404)
         response.json({ 
@@ -259,15 +253,12 @@ app.patch('/mentors/:id', async (request, response) => {
         })
         return
     }
-
     db.mentors[mentorFoundIndex] = {
         ...db.mentors[mentorFoundIndex],
         ...request.body
     }
-
     const dbAsString = JSON.stringify(db, '\n', 2)
     await fsPromise.writeFile('kodemia.json', dbAsString, 'utf8')
-
     response.json(db.mentors[mentorFoundIndex])
 })
 
