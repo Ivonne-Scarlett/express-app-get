@@ -1,58 +1,132 @@
-
 {
-    "mentors": [],
-
-    "koders": [
-        {
-            "id": 1,
-            "name": "Emilio",
-            "age": 29,
-            "nacionality": "mexican",
-            "generationNumber": 15,
-            "hobbies": ["bateria","Diseño"],
-            "sex": "m",
-            "city": "GDL"
-        },
-        {
-            "id": 2,
-            "name": "Erik",
-            "age": 28,
-            "nacionality": "mexican",
-            "generationNumber": 15,
-            "hobbies": ["nadar","football"],
-            "sex": "m",
-            "city": "CDMX"
-        },
-        {
-            "id": 3,
-            "name": "Job",
-            "age": 33,
-            "nacionality": "mexican",
-            "generationNumber": 15,
-            "hobbies": ["gym","PS"],
-            "sex": "m",
-            "city": "CDMX"
-        },
-        {
-            "id": 4,
-            "name": "Isma",
-            "age": 40,
-            "nacionality": "mexican",
-            "generationNumber": 15,
-            "hobbies": ["múisca","series"],
-            "sex": "m",
-            "city": "CDMX"
-        },
-        {
-            "id": 5,
-            "name": "Sara",
-            "age": 32,
-            "nacionality": "mexican",
-            "generationNumber": 15,
-            "hobbies": ["caminar","leer"],
-            "sex": "f",
-            "city": "Durango"
-        }
-    ]
-    
+  "mentors": [
+      {
+        "id": 1,
+        "name": "Charles",
+        "age": 28,
+        "sex": "m",
+        "city": "CDMX",
+        "hobbies": [
+          "guitarra",
+          "música"
+        ],
+        "yearsInKodemia": 5        
+      },
+      {
+        "id": 2,
+        "name": "Isra",
+        "age": 28,
+        "sex": "m",
+        "city": "CDMX",
+        "hobbies": [
+          "bateria",
+          "música"
+        ],
+        "yearsInKodemia": 6       
+      },
+      {
+        "id": 3,
+        "name": "Rose",
+        "age": 29,
+        "sex": "f",
+        "city": "CDMX",
+        "hobbies": [
+          "leer",
+          "bicicleta"
+        ],
+        "yearsInKodemia": 2        
+      },
+      {
+        "id": 4,
+        "name": "Nao",
+        "age": 24,
+        "sex": "f",
+        "city": "CDMX",
+        "hobbies": [
+          "gastronomia",
+          "cine"
+        ],
+        "yearsInKodemia": 5        
+      }
+  ],
+  "koders": [
+    {
+      "id": 1,
+      "name": "Emilio",
+      "age": 29,
+      "nacionality": "mexican",
+      "generationNumber": 15,
+      "hobbies": [
+        "bateria",
+        "Diseño"
+      ],
+      "sex": "m",
+      "city": "GDL"
+    },
+    {
+      "id": 2,
+      "name": "Erik",
+      "age": 20,
+      "nacionality": "mexican",
+      "generationNumber": 15,
+      "hobbies": [
+        "nadar",
+        "football"
+      ],
+      "sex": "m",
+      "city": "CDMX"
+    },
+    {
+      "id": 3,
+      "name": "Job",
+      "age": 33,
+      "nacionality": "mexican",
+      "generationNumber": 15,
+      "hobbies": [
+        "gym",
+        "PS"
+      ],
+      "sex": "m",
+      "city": "CDMX"
+    },
+    {
+      "id": 4,
+      "name": "Isma",
+      "age": 40,
+      "nacionality": "mexican",
+      "generationNumber": 15,
+      "hobbies": [
+        "múisca",
+        "series"
+      ],
+      "sex": "m",
+      "city": "CDMX"
+    },
+    {
+      "id": 5,
+      "name": "Sara",
+      "age": 32,
+      "nacionality": "mexican",
+      "generationNumber": 15,
+      "hobbies": [
+        "caminar",
+        "leer"
+      ],
+      "sex": "f",
+      "city": "Durango"
+    },
+    {
+      "id": 6,
+      "name": "ivonne",
+      "age": 31,
+      "nacionality": "mexican",
+      "genetarionNumber": 15,
+      "hobbies": [
+        "bailar",
+        "cine"
+      ],
+      "sex": "f",
+      "city": "Toluca"
+    }
+  ]
 }
